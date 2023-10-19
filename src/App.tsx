@@ -24,14 +24,15 @@ export default function App() {
       ];
       document.documentElement.animate(
         {
-          clipPath: isDark ? [...clipPath].reverse() : clipPath,
+          clipPath: clipPath,
         },
         {
           duration: 500,
           easing: "ease-in",
-          pseudoElement: isDark
-            ? "::view-transition-old(root)"
-            : "::view-transition-new(root)",
+          pseudoElement: "::view-transition-new(root)"
+          // pseudoElement: isDark
+          //   ? "::view-transition-old(root)"
+          //   : "::view-transition-new(root)",
         }
       );
     });
